@@ -8,7 +8,7 @@ import {getImmoInvestments, getLoading, NewState, OverviewState} from './redux/o
 @Component({
 	selector: 'imc-overview-page',
 	templateUrl: './overview-page.component.html',
-	styleUrls: ['./overview-page.component.sass']
+	styleUrls: ['./overview-page.component.scss']
 })
 export class OverviewPageComponent implements OnInit {
 
@@ -22,9 +22,6 @@ export class OverviewPageComponent implements OnInit {
 
 	ngOnInit() {
 		this.store.dispatch(loadImmoInvestments);
-		this.immoInvestments$.subscribe(i => {
-			console.log("Hans" + i);
-		})
 	}
 
 }

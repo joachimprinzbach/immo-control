@@ -13,6 +13,10 @@ import {StoreModule} from '@ngrx/store';
 import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import {metaReducers, ROOT_REDUCERS} from './app.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {registerLocaleData} from '@angular/common';
+import localDe from '@angular/common/locales/de';
+
+registerLocaleData(localDe, 'de');
 
 @NgModule({
 	declarations: [

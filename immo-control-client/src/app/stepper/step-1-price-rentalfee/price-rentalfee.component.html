@@ -1,0 +1,31 @@
+<form [formGroup]="formPriceRentalfee" class="form-container">
+    <ng-template matStepLabel>Kaufpreis</ng-template>
+    <p>
+        <mat-form-field floatLabel="always" appearance="standard">
+            <mat-label>Kaufpreis (€)</mat-label>
+            <input matInput formControlName="price" required>
+            <span matSuffix>€</span>
+        </mat-form-field>
+        <span *ngIf="pricePerSquareMeter" class="second-column">{{pricePerSquareMeter | number:'1.0-0':'de'}} €/m²</span>
+    </p>
+    <p>
+        <mat-form-field floatLabel="always" appearance="standard">
+            <mat-label>Wohnfläche (m²)</mat-label>
+            <input matInput formControlName="size" required>
+            <span matSuffix>m²</span>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field floatLabel="always" appearance="standard">
+            <mat-label>Kaltmiete (€)</mat-label>
+            <input matInput formControlName="rentalFee" required>
+            <span matSuffix>€</span>
+        </mat-form-field>
+    </p>
+    <p>
+        <span *ngIf="bruttoMietRendite > 0">Bruttomietrendite: {{bruttoMietRendite | percent}}</span>
+    </p>
+    <div>
+        <button mat-button matStepperNext>Weiter</button>
+    </div>
+</form>
