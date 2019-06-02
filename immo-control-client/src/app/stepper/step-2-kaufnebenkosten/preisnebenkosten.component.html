@@ -1,0 +1,30 @@
+<form [formGroup]="formPreisnebenkosten" class="form-container">
+    <p>
+        <mat-form-field>
+            <input matInput placeholder="Bundesland" aria-label="State" [matAutocomplete]="auto" formControlName="bundesland">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+                    <span>{{state.name}}</span>
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </p>
+    <p>
+        <span *ngIf="selectedSteuersatz">Grunderwerbssteuer: {{selectedSteuersatz | percent:'1.2-2':'de'}}</span>
+    </p>
+    <p>
+        <span *ngIf="selectedMaklerProvisionKaeufer">Makler: {{selectedMaklerProvisionKaeufer | percent:'1.2-2':'de'}}</span>
+    </p>
+    <p>
+        <span *ngIf="selectedSteuersatz">Notar: {{'0.015' | percent:'1.2-2':'de'}}</span>
+    </p>
+    <p>
+        <span *ngIf="selectedSteuersatz">Grundbuch Amt: {{'0.005' | percent:'1.2-2':'de'}}</span>
+    </p>
+    <p>
+        <span *ngIf="selectedSteuersatz">Sonstige: {{'0.000' | percent:'1.2-2':'de'}}</span>
+    </p>
+    <div>
+        <button mat-button matStepperNext>Weiter</button>
+    </div>
+</form>

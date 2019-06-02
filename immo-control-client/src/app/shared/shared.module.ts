@@ -1,7 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
-import {MatButtonModule, MatChipsModule, MatFormFieldModule, MatInputModule, MatTooltipModule} from '@angular/material';
+import {
+	MatAutocompleteModule,
+	MatButtonModule,
+	MatChipsModule,
+	MatFormFieldModule,
+	MatInputModule, MatToolbarModule,
+	MatTooltipModule
+} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const modules = [
@@ -11,6 +18,8 @@ const modules = [
 	MatFormFieldModule,
 	MatTooltipModule,
 	MatInputModule,
+	MatAutocompleteModule,
+	MatToolbarModule,
 	FormsModule,
 	ReactiveFormsModule
 ];

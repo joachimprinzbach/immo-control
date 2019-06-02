@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.form-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.second-column {
+	padding-left: 40px;
+}
