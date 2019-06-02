@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
-import { StepperPageComponent } from './stepper-page.component';
+import {NgModule} from '@angular/core';
+import {StepperPageComponent} from './stepper-page.component';
 import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
-  declarations: [StepperPageComponent],
-  imports: [
-    SharedModule
-  ]
+	declarations: [StepperPageComponent],
+	imports: [
+		SharedModule
+	]
 })
-export class StepperModule { }
+export class StepperModule {
+}

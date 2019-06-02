@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'imc-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.sass']
+	selector: 'imc-footer',
+	templateUrl: './footer.component.html',
+	styleUrls: ['./footer.component.sass']
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+	constructor() {
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }

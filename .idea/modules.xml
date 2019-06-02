@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/immo-control.iml" filepath="$PROJECT_DIR$/.idea/immo-control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/immo-control-client/immo-control-client.iml" filepath="$PROJECT_DIR$/immo-control-client/immo-control-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/immo-control-server.iml" filepath="$PROJECT_DIR$/.idea/modules/immo-control-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/immo-control-server/src/main/main.iml" filepath="$PROJECT_DIR$/immo-control-server/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/immo-control-server/src/test/test.iml" filepath="$PROJECT_DIR$/immo-control-server/src/test/test.iml" />
     </modules>
   </component>
 </project>

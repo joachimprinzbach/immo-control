@@ -8,22 +8,36 @@ import {HeaderModule} from "./header/header.module";
 import {FooterModule} from "./footer/footer.module";
 import {OverviewModule} from "./overview/overview.module";
 import {StepperModule} from "./stepper/stepper.module";
+import {EffectsModule} from '@ngrx/effects';
+import {StoreModule} from '@ngrx/store';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
+import {metaReducers, ROOT_REDUCERS} from './app.reducer';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HeaderModule,
-        FooterModule,
-        OverviewModule,
-        StepperModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+	declarations: [
+		AppComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		HeaderModule,
+		FooterModule,
+		OverviewModule,
+		StepperModule,
+		StoreModule.forRoot(ROOT_REDUCERS, {
+			metaReducers,
+		}),
+		StoreRouterConnectingModule.forRoot(),
+		EffectsModule.forRoot([]),
+		StoreDevtoolsModule.instrument({
+			name: 'Immo Control',
+		}),
+
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule {
 }

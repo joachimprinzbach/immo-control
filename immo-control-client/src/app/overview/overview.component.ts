@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {ImmoInvestment} from '../shared/model';
 
 @Component({
-  selector: 'imc-overview',
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.sass']
+	selector: 'imc-overview',
+	templateUrl: './overview.component.html',
+	styleUrls: ['./overview.component.sass']
 })
-export class OverviewComponent implements OnInit {
+export class OverviewComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+	@Input()
+	immoInvestments: ImmoInvestment[];
 }
