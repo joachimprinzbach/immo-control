@@ -2,11 +2,11 @@
 <mat-horizontal-stepper [linear]="true" labelPosition="bottom" #stepper>
     <mat-step [stepControl]="priceRentalfee.formPriceRentalfee">
         <ng-template matStepLabel>Kaufpreis</ng-template>
-        <imc-price-rentalfee #priceRentalfee></imc-price-rentalfee>
+        <imc-kaufpreis-miete [selectedImmoInvestment]="selectedImmoInvestment" #priceRentalfee></imc-kaufpreis-miete>
     </mat-step>
     <mat-step [stepControl]="preisnebenkosten.formPreisnebenkosten">
         <ng-template matStepLabel>Nebenkosten</ng-template>
-        <imc-preisnebenkosten #preisnebenkosten></imc-preisnebenkosten>
+        <imc-preisnebenkosten [selectedImmoInvestment]="selectedImmoInvestment" #preisnebenkosten></imc-preisnebenkosten>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>

@@ -14,10 +14,24 @@ export class ImmoInvestmentService {
 	getImmoInvestments(): Observable<ImmoInvestment[]> {
 		return of([
 			{
-				name: 'Test'
+				id: 99,
+				name: 'Test',
+				kaufpreis: 240000,
+				wohnflaeche: 86,
+				monatsNettoKaltmiete: 980,
+				bundesland: 'Baden-Wuerttemberg',
+				grundErwerbssteuerSatz: 0.005,
+				maklerProvisionKaeuferSatz: 0.0357,
 			},
 			{
-				name: 'Other one'
+				id: 85,
+				name: 'Other one',
+				kaufpreis: 165000,
+				wohnflaeche: 66,
+				monatsNettoKaltmiete: 700,
+				bundesland: 'Baden-Wuerttemberg',
+				grundErwerbssteuerSatz: 0.005,
+				maklerProvisionKaeuferSatz: 0.0357,
 			}
 		])
 	}

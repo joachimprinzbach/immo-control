@@ -2,7 +2,7 @@
     <p>
         <mat-form-field floatLabel="always" appearance="standard">
             <mat-label>Kaufpreis (€)</mat-label>
-            <input matInput formControlName="price" required>
+            <input matInput formControlName="kaufpreis" required>
             <span matSuffix>€</span>
         </mat-form-field>
         <span *ngIf="pricePerSquareMeter" class="second-column">{{pricePerSquareMeter | number:'1.0-0':'de'}} €/m²</span>
@@ -10,14 +10,14 @@
     <p>
         <mat-form-field floatLabel="always" appearance="standard">
             <mat-label>Wohnfläche (m²)</mat-label>
-            <input matInput formControlName="size" required>
+            <input matInput formControlName="wohnflaeche" required>
             <span matSuffix>m²</span>
         </mat-form-field>
     </p>
     <p>
         <mat-form-field floatLabel="always" appearance="standard">
             <mat-label>Kaltmiete (€)</mat-label>
-            <input matInput formControlName="rentalFee" required>
+            <input matInput formControlName="monatsNettoKaltmiete" required>
             <span matSuffix>€</span>
         </mat-form-field>
     </p>

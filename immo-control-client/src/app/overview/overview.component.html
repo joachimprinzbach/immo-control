@@ -1,4 +1,4 @@
 <button mat-raised-button color="primary" (click)="createNew()">Create new</button>
-<div *ngFor="let i of immoInvestments">
-    {{i.name}}
+<div *ngFor="let immoInvestment of immoInvestments">
+    <button mat-raised-button color="accent" (click)="edit(immoInvestment.id)">{{immoInvestment.name}}</button>
 </div>

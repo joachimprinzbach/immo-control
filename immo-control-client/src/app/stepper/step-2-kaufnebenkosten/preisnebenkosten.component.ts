@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {ImmoInvestment} from '../../shared/model';
 
 interface Bundesland {
 	name: string;
@@ -14,7 +15,11 @@ interface Bundesland {
 	templateUrl: './preisnebenkosten.component.html',
 	styleUrls: ['./preisnebenkosten.component.scss']
 })
-export class PreisnebenkostenComponent {
+export class PreisnebenkostenComponent implements OnInit {
+
+	@Input()
+	selectedImmoInvestment: ImmoInvestment;
+
 	formPreisnebenkosten: FormGroup;
 	filteredStates: Observable<Bundesland[]>;
 	states: Bundesland[] = [
@@ -45,6 +50,9 @@ export class PreisnebenkostenComponent {
 				startWith(''),
 				map(state => state ? this._filterStates(state) : this.states.slice())
 			);
+	}
+
+	ngOnInit(): void {
 	}
 
 	private _filterStates(value: string): Bundesland[] {

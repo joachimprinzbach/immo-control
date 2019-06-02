@@ -19,4 +19,8 @@ export class OverviewComponent {
 	createNew() {
 		this.router.navigate(['./stepper']);
 	}
+
+	edit(id: number) {
+		this.router.navigate(['./stepper', {id: id}]);
+	}
 }
