@@ -9,3 +9,9 @@ export interface ImmoInvestment {
 	maklerProvisionKaeuferSatz?: number;
 
 }
+
+export interface Bundesland {
+	name: string;
+	steuersatz: number;
+	maklerProvisionKaeufer: number;
+}

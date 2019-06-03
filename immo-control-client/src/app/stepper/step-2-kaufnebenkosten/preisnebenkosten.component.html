@@ -10,19 +10,19 @@
         </mat-form-field>
     </p>
     <p>
-        <span *ngIf="selectedSteuersatz">Grunderwerbssteuer: {{selectedSteuersatz | percent:'1.2-2':'de'}}</span>
+        <span *ngIf="bundesland">Grunderwerbssteuer: {{selectedSteuersatz | percent:'1.2-2':'de'}}</span>
     </p>
     <p>
-        <span *ngIf="selectedMaklerProvisionKaeufer">Makler: {{selectedMaklerProvisionKaeufer | percent:'1.2-2':'de'}}</span>
+        <span *ngIf="bundesland">Makler: {{selectedMaklerProvisionKaeufer | percent:'1.2-2':'de'}}</span>
     </p>
     <p>
-        <span *ngIf="selectedSteuersatz">Notar: {{'0.015' | percent:'1.2-2':'de'}}</span>
+        <span *ngIf="bundesland">Notar: {{'0.015' | percent:'1.2-2':'de'}}</span>
     </p>
     <p>
-        <span *ngIf="selectedSteuersatz">Grundbuch Amt: {{'0.005' | percent:'1.2-2':'de'}}</span>
+        <span *ngIf="bundesland">Grundbuch Amt: {{'0.005' | percent:'1.2-2':'de'}}</span>
     </p>
     <p>
-        <span *ngIf="selectedSteuersatz">Sonstige: {{'0.000' | percent:'1.2-2':'de'}}</span>
+        <span *ngIf="bundesland">Sonstige: {{'0.000' | percent:'1.2-2':'de'}}</span>
     </p>
     <div>
         <button mat-button matStepperNext>Weiter</button>

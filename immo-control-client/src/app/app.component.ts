@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {loadImmoInvestments} from './overview/redux/overview.actions';
 import {Store} from '@ngrx/store';
 import {NewState} from './overview/redux/overview.reducer';
@@ -6,7 +6,8 @@ import {NewState} from './overview/redux/overview.reducer';
 @Component({
 	selector: 'imc-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+	styleUrls: ['./app.component.scss'],
+	encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
 

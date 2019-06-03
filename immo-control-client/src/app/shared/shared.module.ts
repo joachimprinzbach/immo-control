@@ -6,10 +6,11 @@ import {
 	MatButtonModule,
 	MatChipsModule,
 	MatFormFieldModule,
-	MatInputModule, MatToolbarModule,
+	MatInputModule, MatPaginatorModule, MatSortModule, MatTableModule, MatToolbarModule,
 	MatTooltipModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AppRoutingModule} from '../app-routing.module';
 
 const modules = [
 	CommonModule,
@@ -20,7 +21,11 @@ const modules = [
 	MatInputModule,
 	MatAutocompleteModule,
 	MatToolbarModule,
+	MatTableModule,
+	MatPaginatorModule,
+	MatSortModule,
 	FormsModule,
+	AppRoutingModule,
 	ReactiveFormsModule
 ];
 

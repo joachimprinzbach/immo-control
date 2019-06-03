@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ImmoInvestment} from '../../shared/model';
+import {ImmoCalculationService} from '../../shared/immo-calculation.service';
 
 @Component({
 	selector: 'imc-kaufpreis-miete',
@@ -14,7 +15,7 @@ export class KaufpreisMieteComponent implements OnInit {
 
 	formPriceRentalfee: FormGroup;
 
-	constructor(private formBuilder: FormBuilder) {
+	constructor(private formBuilder: FormBuilder, private immoCalculationService: ImmoCalculationService) {
 		this.formPriceRentalfee = this.formBuilder.group({
 			kaufpreis: ['', Validators.required],
 			wohnflaeche: ['', Validators.required],
@@ -30,14 +31,14 @@ export class KaufpreisMieteComponent implements OnInit {
 	}
 
 	get pricePerSquareMeter() {
-		let price = this.formPriceRentalfee.get('kaufpreis').value;
-		let size = this.formPriceRentalfee.get('wohnflaeche').value;
-		return (price > 0 && size > 0) ? price / size : 0
+		let kaufpreis = this.formPriceRentalfee.get('kaufpreis').value;
+		let wohnflaeche = this.formPriceRentalfee.get('wohnflaeche').value;
+		return this.immoCalculationService.pricePerSquareMeter(kaufpreis, wohnflaeche);
 	}
 
 	get bruttoMietRendite() {
-		let price = this.formPriceRentalfee.get('kaufpreis').value;
-		let yearlyRentalFee = this.formPriceRentalfee.get('monatsNettoKaltmiete').value * 12;
-		return (price > 0 && yearlyRentalFee > 0) ? yearlyRentalFee / price : 0
+		let kaufpreis = this.formPriceRentalfee.get('kaufpreis').value;
+		let monatsNettoKaltmiete = this.formPriceRentalfee.get('monatsNettoKaltmiete').value;
+		return this.immoCalculationService.bruttoMietRendite(kaufpreis, monatsNettoKaltmiete);
 	}
 }

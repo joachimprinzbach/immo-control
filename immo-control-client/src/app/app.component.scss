@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+.content-container {
+	padding: 12px;
+	flex: 1;
+}
+
+main {
+	margin-top: 56px;
+	display: flex;
+	flex-direction: column;
+
+	> *:not(router-outlet) {
+		flex: 1;
+		display: block;
+	}
+}
+
+imc-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
