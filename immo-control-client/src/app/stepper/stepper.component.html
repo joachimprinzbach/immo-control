@@ -1,19 +1,38 @@
 <mat-toolbar>Display some context relevant infos</mat-toolbar>
-<mat-horizontal-stepper [linear]="true" labelPosition="bottom" #stepper>
-    <mat-step [stepControl]="priceRentalfee.formPriceRentalfee">
+<mat-horizontal-stepper [linear]="true" labelPosition="bottom">
+    <mat-step [stepControl]="priceRentalfee.form">
         <ng-template matStepLabel>Kaufpreis</ng-template>
         <imc-kaufpreis-miete [selectedImmoInvestment]="selectedImmoInvestment" #priceRentalfee></imc-kaufpreis-miete>
     </mat-step>
-    <mat-step [stepControl]="preisnebenkosten.formPreisnebenkosten">
+
+    <mat-step [stepControl]="preisnebenkosten.form">
         <ng-template matStepLabel>Nebenkosten</ng-template>
         <imc-preisnebenkosten [selectedImmoInvestment]="selectedImmoInvestment" #preisnebenkosten></imc-preisnebenkosten>
     </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        You are now done.
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
+
+    <mat-step [stepControl]="massnahmen.form">
+        <ng-template matStepLabel>Massnahmen</ng-template>
+        <imc-massnahmen [selectedImmoInvestment]="selectedImmoInvestment" #massnahmen></imc-massnahmen>
     </mat-step>
+
+    <mat-step [stepControl]="finanzierung.form">
+        <ng-template matStepLabel>Finanzierung</ng-template>
+        <imc-finanzierung [selectedImmoInvestment]="selectedImmoInvestment" #finanzierung></imc-finanzierung>
+    </mat-step>
+
+    <mat-step [stepControl]="hausgeldRuecklagen.form">
+        <ng-template matStepLabel>Hausgeld & Rücklagen</ng-template>
+        <imc-finanzierung [selectedImmoInvestment]="selectedImmoInvestment" #hausgeldRuecklagen></imc-finanzierung>
+    </mat-step>
+
+    <mat-step [stepControl]="zinsen.form">
+        <ng-template matStepLabel>Zinsen</ng-template>
+        <imc-finanzierung [selectedImmoInvestment]="selectedImmoInvestment" #zinsen></imc-finanzierung>
+    </mat-step>
+
+    <mat-step [stepControl]="steuern.form">
+        <ng-template matStepLabel>Steuern</ng-template>
+        <imc-finanzierung [selectedImmoInvestment]="selectedImmoInvestment" #steuern></imc-finanzierung>
+    </mat-step>
+
 </mat-horizontal-stepper>

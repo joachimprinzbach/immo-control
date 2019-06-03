@@ -15,14 +15,14 @@ export class PreisnebenkostenComponent implements OnInit {
 	@Input()
 	selectedImmoInvestment: ImmoInvestment;
 
-	formPreisnebenkosten: FormGroup;
+	form: FormGroup;
 	filteredStates: Observable<Bundesland[]>;
 
 	constructor(private formBuilder: FormBuilder, private immoCalculationService: ImmoCalculationService) {
-		this.formPreisnebenkosten = this.formBuilder.group({
+		this.form = this.formBuilder.group({
 			bundesland: ['', Validators.required]
 		});
-		this.filteredStates = this.formPreisnebenkosten.get('bundesland').valueChanges
+		this.filteredStates = this.form.get('bundesland').valueChanges
 			.pipe(
 				startWith(''),
 				map(state => state ? this._filterStates(state) : this.immoCalculationService.getStates().slice())
@@ -31,7 +31,7 @@ export class PreisnebenkostenComponent implements OnInit {
 
 	ngOnInit(): void {
 		if(this.selectedImmoInvestment) {
-			this.formPreisnebenkosten.patchValue(this.selectedImmoInvestment);
+			this.form.patchValue(this.selectedImmoInvestment);
 		}
 	}
 
@@ -49,7 +49,7 @@ export class PreisnebenkostenComponent implements OnInit {
 	}
 
 	get bundesland() {
-		return this.formPreisnebenkosten.get('bundesland').value;
+		return this.form.get('bundesland').value;
 	}
 
 	private getSelectedValueForBundesland(propertyFn: (bundesland: Bundesland) => any) {

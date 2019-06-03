@@ -1,4 +1,4 @@
-<form [formGroup]="formPriceRentalfee" class="form-container">
+<form [formGroup]="form" class="form-container">
     <p>
         <mat-form-field floatLabel="always" appearance="standard">
             <mat-label>Kaufpreis (€)</mat-label>
@@ -25,6 +25,6 @@
         <span *ngIf="bruttoMietRendite > 0">Bruttomietrendite: {{bruttoMietRendite | percent:'1.2-2':'de'}}</span>
     </p>
     <div>
-        <button mat-button matStepperNext>Weiter</button>
+        <button mat-raised-button color="accent" matStepperNext>Weiter</button>
     </div>
 </form>
