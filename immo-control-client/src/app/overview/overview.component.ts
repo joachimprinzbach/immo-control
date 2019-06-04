@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit, ViewChild} from '@angular/core';
 import {ImmoInvestment} from '../shared/model';
 import {Router} from '@angular/router';
 import {MatSort, MatTableDataSource} from '@angular/material';
@@ -6,7 +6,8 @@ import {MatSort, MatTableDataSource} from '@angular/material';
 @Component({
 	selector: 'imc-overview',
 	templateUrl: './overview.component.html',
-	styleUrls: ['./overview.component.scss']
+	styleUrls: ['./overview.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OverviewComponent implements OnInit {
 

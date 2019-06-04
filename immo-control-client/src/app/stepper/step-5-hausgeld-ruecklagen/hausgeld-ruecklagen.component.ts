@@ -1,11 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {ImmoInvestment} from '../../shared/model';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'imc-hausgeld-ruecklagen',
   templateUrl: './hausgeld-ruecklagen.component.html',
-  styleUrls: ['./hausgeld-ruecklagen.component.scss']
+  styleUrls: ['./hausgeld-ruecklagen.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HausgeldRuecklagenComponent implements OnInit {
 

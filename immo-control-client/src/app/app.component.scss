@@ -1,6 +1,13 @@
 .content-container {
 	padding: 12px;
-	flex: 1;
+}
+
+.content {
+	flex: 1 0 auto;
+}
+
+.footer {
+	flex-shrink: 0;
 }
 
 main {
@@ -21,3 +28,4 @@ imc-header {
 	right: 0;
 	z-index: 2;
 }
+

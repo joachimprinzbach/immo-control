@@ -35,4 +35,8 @@ export class ImmoInvestmentService {
 			}
 		])
 	}
+
+	saveImmoInvestment(immoInvestment: ImmoInvestment): Observable<ImmoInvestment> {
+		return of(immoInvestment);
+	}
 }

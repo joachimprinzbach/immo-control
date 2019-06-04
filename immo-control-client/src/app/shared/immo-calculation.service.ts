@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Bundesland} from './model';
+import {Bundesland, ImmoInvestment} from './model';
 
 @Injectable({
 	providedIn: 'root'
@@ -35,5 +35,9 @@ export class ImmoCalculationService {
 
 	getStates() {
 		return this.states;
+	}
+
+	nebenkosten(selectedSteuersatz: number, selectedMaklerProvisionKaeufer: number, notarSatz: number, grundbuchamt: number, sonstige: number, kaufpreis: number) {
+		return (selectedSteuersatz + selectedMaklerProvisionKaeufer + notarSatz + grundbuchamt + sonstige) * kaufpreis;
 	}
 }

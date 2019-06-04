@@ -1,5 +1,5 @@
 <mat-toolbar>Display some context relevant infos</mat-toolbar>
-<mat-horizontal-stepper [linear]="true" labelPosition="bottom">
+<mat-horizontal-stepper (selectionChange)="onStepSelectionChange($event)" [linear]="true" labelPosition="bottom">
     <mat-step [stepControl]="priceRentalfee.form">
         <ng-template matStepLabel>Kaufpreis</ng-template>
         <imc-kaufpreis-miete [selectedImmoInvestment]="selectedImmoInvestment" #priceRentalfee></imc-kaufpreis-miete>

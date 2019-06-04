@@ -3,7 +3,13 @@ import {Actions, Effect, ofType} from '@ngrx/effects';
 import {of} from 'rxjs';
 import {catchError, map, switchMap,} from 'rxjs/operators';
 
-import {loadImmoInvestments, loadImmoInvestmentsFailure, loadImmoInvestmentsSuccess} from './overview.actions';
+import {
+	loadImmoInvestments,
+	loadImmoInvestmentsFailure,
+	loadImmoInvestmentsSuccess,
+	saveImmoInvestment, saveImmoInvestmentFailure,
+	saveImmoInvestmentSuccess
+} from './overview.actions';
 import {ImmoInvestmentService} from '../immo-investment.service';
 import {ImmoInvestment} from '../../shared/model';
 
@@ -21,6 +27,22 @@ export class ImmoInvestmentEffects {
 					),
 					catchError(error =>
 						of(loadImmoInvestmentsFailure({errorMsg: error}))
+					)
+				)
+			)
+		);
+
+	@Effect()
+	saveImmoInvestment$ = () =>
+		this.actions$.pipe(
+			ofType(saveImmoInvestment.type),
+			switchMap(({immoInvestment}) =>
+				this.immoInvestmentService.saveImmoInvestment(immoInvestment).pipe(
+					map((immoInvestment: ImmoInvestment) => {
+						return saveImmoInvestmentSuccess({immoInvestment})}
+					),
+					catchError(error =>
+						of(saveImmoInvestmentFailure({errorMsg: error}))
 					)
 				)
 			)

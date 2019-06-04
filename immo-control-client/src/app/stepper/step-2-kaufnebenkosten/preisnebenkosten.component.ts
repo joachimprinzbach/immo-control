@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -8,7 +8,8 @@ import {ImmoCalculationService} from '../../shared/immo-calculation.service';
 @Component({
 	selector: 'imc-preisnebenkosten',
 	templateUrl: './preisnebenkosten.component.html',
-	styleUrls: ['./preisnebenkosten.component.scss']
+	styleUrls: ['./preisnebenkosten.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PreisnebenkostenComponent implements OnInit {
 
@@ -48,8 +49,24 @@ export class PreisnebenkostenComponent implements OnInit {
 		return this.getSelectedValueForBundesland((bundesland: Bundesland) => bundesland.maklerProvisionKaeufer);
 	}
 
+	get notarSatz() {
+		return 0.015;
+	}
+
+	get grundbuchamt() {
+		return 0.005;
+	}
+
+	get sonstige() {
+		return 0.0;
+	}
+
 	get bundesland() {
 		return this.form.get('bundesland').value;
+	}
+
+	get nebenkosten() {
+		return this.immoCalculationService.nebenkosten(this.selectedSteuersatz, this.selectedMaklerProvisionKaeufer, this.notarSatz, this.grundbuchamt, this.sonstige, this.selectedImmoInvestment.kaufpreis);
 	}
 
 	private getSelectedValueForBundesland(propertyFn: (bundesland: Bundesland) => any) {

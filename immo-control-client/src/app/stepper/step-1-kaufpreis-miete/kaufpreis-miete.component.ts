@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ImmoInvestment} from '../../shared/model';
 import {ImmoCalculationService} from '../../shared/immo-calculation.service';
@@ -6,7 +6,8 @@ import {ImmoCalculationService} from '../../shared/immo-calculation.service';
 @Component({
 	selector: 'imc-kaufpreis-miete',
 	templateUrl: './kaufpreis-miete.component.html',
-	styleUrls: ['./kaufpreis-miete.component.scss']
+	styleUrls: ['./kaufpreis-miete.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class KaufpreisMieteComponent implements OnInit {
 

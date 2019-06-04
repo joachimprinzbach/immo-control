@@ -1,11 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {ImmoInvestment} from '../../shared/model';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'imc-finanzierung',
   templateUrl: './finanzierung.component.html',
-  styleUrls: ['./finanzierung.component.scss']
+  styleUrls: ['./finanzierung.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FinanzierungComponent implements OnInit {
   @Input()

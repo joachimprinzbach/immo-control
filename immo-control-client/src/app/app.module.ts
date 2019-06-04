@@ -15,6 +15,7 @@ import {metaReducers, ROOT_REDUCERS} from './app.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {registerLocaleData} from '@angular/common';
 import localDe from '@angular/common/locales/de';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 
 registerLocaleData(localDe, 'de');
 
@@ -36,11 +37,16 @@ registerLocaleData(localDe, 'de');
 		StoreRouterConnectingModule.forRoot(),
 		EffectsModule.forRoot([]),
 		StoreDevtoolsModule.instrument({
-			name: 'Immo Control',
+			name: 'Immo Control'
 		}),
 
 	],
-	providers: [],
+	providers: [
+		{
+			provide: STEPPER_GLOBAL_OPTIONS,
+			useValue: {displayDefaultIndicatorType: false}
+		}
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -16,5 +16,33 @@ export const loadImmoInvestmentsSuccess = createAction(
 	props<{ immoInvestments: ImmoInvestment[] }>()
 );
 
-const all = union({loadImmoInvestments, loadImmoInvestmentsFailure, loadImmoInvestmentsSuccess});
+export const saveImmoInvestment = createAction(
+	'Save Immo Investment',
+	props<{ immoInvestment: ImmoInvestment }>()
+);
+
+export const saveImmoInvestmentFailure = createAction(
+	'Save Immo Investment Failure',
+	props<{ errorMsg: string }>()
+);
+
+export const saveImmoInvestmentSuccess = createAction(
+	'Save Immo Investment Success',
+	props<{ immoInvestment: ImmoInvestment }>()
+);
+
+export const selectImmoInvestment = createAction(
+	'Select ImmoInvestment',
+	props<{ id: number }>()
+);
+
+const all = union({
+	loadImmoInvestments,
+	loadImmoInvestmentsFailure,
+	loadImmoInvestmentsSuccess,
+	saveImmoInvestment,
+	saveImmoInvestmentFailure,
+	saveImmoInvestmentSuccess,
+	selectImmoInvestment
+});
 export type OverviewActions = typeof all;

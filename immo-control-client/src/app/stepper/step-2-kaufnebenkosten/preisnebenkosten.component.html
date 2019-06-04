@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="form-container">
+<form [formGroup]="form" class="form-container mat-typography">
     <p>
         <mat-form-field>
             <input matInput placeholder="Bundesland" aria-label="State" [matAutocomplete]="auto" formControlName="bundesland">
@@ -24,6 +24,9 @@
     <p>
         <span *ngIf="bundesland">Sonstige: {{'0.000' | percent:'1.2-2':'de'}}</span>
     </p>
+    <div>
+        <p>Deine Kaufnebenkosten: {{nebenkosten  | number:'1.0-0':'de'}} €</p>
+    </div>
     <div>
         <button mat-raised-button color="accent" matStepperNext>Weiter</button>
     </div>
